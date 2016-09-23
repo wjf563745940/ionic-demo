@@ -1,0 +1,27 @@
+<ion-view title="动态" class="dynamics" ng-controller="DynamicsCtrl">
+ <ion-nav-buttons side="right">
+     <button class="button button-icon ion-plus"  ng-controller="NavBarCtrl2" ng-click="showSheet()">
+        </button>
+    </ion-nav-buttons>
+	<ion-content class="">
+	  <div class="list">
+        <a class="item "  on-tap='myHref(item)'
+        ng-repeat="item in items track by item.id">
+          <h2>{{item.title}}</h2>
+          <div class="box betwen-buttom mar-top-10">
+          	<div><img  ng-src="{{item.user.header}}" class="headr1" />	<div class="item2">
+          		<p>{{item.user.name}}</p>
+          		<p class="gray">{{item.time}}</p>
+          		
+          	</div></div>
+          </div>
+          		      
+
+        </a>
+    </div> 	
+	<div class="box jueduijuzhong" ng-hide="muhide">
+	<p class="my-icon"><i class="ion-clipboard"></i></p>
+			<p class="my-text">暂时无动态信息</p>	
+	</div>	
+	</ion-content>
+</ion-view>

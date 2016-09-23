@@ -1,0 +1,12 @@
+<ion-view view-title="我关注的项目" ng-controller="QuotesCtrl">
+	<ion-content>
+		<ion-refresher on-refresh="getQuotes()">
+
+		</ion-refresher>
+		<ion-list>
+			<ion-item ng-repeat="item in quotes">
+				<div>{{item.LastTradePriceOnly | currency:'$'}}</div>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>	

@@ -1,0 +1,24 @@
+<ion-view view-title="设置" ng-controller="PersonalSettingsCtrl" hide-tabs="true">
+  <ion-content>
+
+    <ion-list class="">
+      <ion-item class=" item-remove-animate  item-icon-right" ng-repeat="mp in myPro" type="item-text-wrap" ng-click="{{mp.action}}">
+      
+       <h2 class="item-s" >{{mp.name}}<span class="f-right">{{mp.data}}</span></h2>
+
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+      <div class="mar-top-20">	
+      <ion-item class=" item-remove-animate item-icon-right" ng-repeat="mp in myPro2" type="item-text-wrap" href="{{mp.url}}">
+       
+       <h2 class="item-s" >{{mp.name}}</h2> 
+
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+      </div>
+        <ion-item class="mar-top-20 item-remove-animate   " type="item-text-wrap" ng-click="loginOut()">
+        <h2 class="item-s my-center">退出登录</h2>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

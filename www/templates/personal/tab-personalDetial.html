@@ -1,0 +1,29 @@
+<ion-view view-title="{{personalIndex.name}}" ng-controller="PersonalDetialCtrl" hide-tabs="true">
+  <ion-nav-buttons side="right">
+     <button class="button button-icon ion-edit" ng-controller="NavBarCtrl2" ng-click="$parent.editMyself()">
+        </button>
+        <button class="button button-icon ion-share" ng-controller="NavBarCtrl2" ng-click="share()">
+        </button>
+    </ion-nav-buttons>
+  <ion-content>
+    <ion-list class="">
+     <ion-item class="mar-bom-20 item-remove-animate item-avatar item-icon-right" type="item-text-wrap" >
+        <img ng-src="{{personalIndex.header}}">
+        <h2>{{personalIndex.name}}</h2>
+        <div class="box pjfp"><div><p>1</p><p>我的回答</p></div>
+        <div><p>1</p><p>我的关注</p></div>
+        <div><p>1</p><p>我的粉丝</p></div></div> 
+      </ion-item>
+      <ion-item class="mar-bom-20 item-remove-animate item-avatar item-icon-right " type="item-text-wrap" >
+         <i class="icon  my-item-left {{myState.icon}} " ng-class="{{myState.icon}}"></i>
+        <h2 class="item-s">{{myState.name}}</h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+      <ion-item class=" item-remove-animate item-avatar item-icon-right" ng-repeat="mp in myPro" type="item-text-wrap" >
+        <i class="icon my-item-left {{mp.icon}}"></i>
+       <h2 class="item-s">{{mp.name}}</h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

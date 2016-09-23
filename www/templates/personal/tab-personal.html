@@ -1,0 +1,32 @@
+<ion-view view-title="我的" ng-controller="PersonalCtrl">
+  <ion-content>
+
+    <ion-list class="">
+     <ion-item class="mar-bom-20 item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/tab/personal/detial">
+        <img ng-src="{{personalIndex.header}}">
+        <h2>{{personalIndex.name}}</h2>
+        <p>查看我的个人资料</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+      <ion-item class=" item-remove-animate item-avatar item-icon-right" ng-repeat="mp in myPro" type="item-text-wrap" 
+      href="#/tab/personal/pro">
+        <i class="icon my-item-left {{mp.icon}}"></i>
+       <h2 class="item-s">{{mp.name}}</h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+        <ion-item class="mar-top-20 item-remove-animate item-avatar item-icon-right " type="item-text-wrap" href="#/tab/personal/settings">
+         <i class="icon  my-item-left {{mySetting.icon}} " ng-class="{{mySetting.icon}}"></i>
+        <h2 class="item-s">{{mySetting.name}}</h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+       <ion-item class="mar-top-20 item-remove-animate 
+       item-avatar item-icon-right " type="item-text-wrap" 
+       href="#/tab/personal/quotes">
+         <i class="icon  my-item-left ion-pinpoint " ng-class="{{mySetting.icon}}"></i>
+        <h2 class="item-s">我关注的项目</h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

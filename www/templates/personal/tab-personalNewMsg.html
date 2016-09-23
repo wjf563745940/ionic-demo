@@ -1,0 +1,26 @@
+<ion-view view-title="新消息通知" ng-controller="PersonalNewMsgCtrl" hide-tabs="true">
+  <ion-content>
+
+    <ion-list class="">
+      <div class="">	
+           <ion-item class="item-toggle " type="item-text-wrap" ng-repeat="pro in myPro">
+           <div><span>{{pro.name}}</span>
+           <p class="w-s-imp">{{pro.content}}</p>
+           </div>	
+ 			<label class="toggle toggle-energized">
+
+             <input type="checkbox">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+           </label>
+      </ion-item>
+      </div>
+        <div class="mar-top-20" >
+     <ion-toggle  ng-model="settings.enableFriends" ng-repeat="pro in myPro2" >
+        {{pro.name}}
+    </ion-toggle>
+    </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

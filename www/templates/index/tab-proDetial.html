@@ -1,0 +1,96 @@
+<ion-view view-title="{{pro.title}}" ng-controller="ProDetialCtrl" hide-tabs="true">
+ <div class="bar bar-subheader2 " ng-hide="mtTabShow">
+     <ul  class=" box my-tab  "  >
+          <li  ng-click="go(item.id)" class="active">
+            <p class="p3">项目介绍</p>
+          </li>
+          <li  ng-click="go(item.id)">
+            <p class="p3">项目规则说明</p>
+          </li>
+          <li  ng-click="go(item.id)">
+            <p class="p3">缴款入围进展</p>
+          </li>
+          <li  ng-click="go(item.id)">
+            <p class="p3">投后进度</p>
+          </li>
+        </ul>
+    </div>
+ <ion-content class="" on-scroll="test()" >
+
+ <div class="pos-rel pro-header">
+ <h1>系列</h1>
+<p>项目放：嘻嘻嘻嘻</p>
+<div class="mar-tb-20">
+<video autobuffer autoloop loop controls style="display:none">
+	<source src="/media/video.oga">
+	<source src="/media/video.m4v">
+	<object type="video/ogg" data="/media/video.oga" width="320" height="240">
+	<param name="src" value="/media/video.oga">
+	<param name="autoplay" value="false">
+	<param name="autoStart" value="0">
+	<p><a href="/media/video.oga">Download this video file.</a></p>
+	</object>
+</video>
+<i class="ion-chatbubble-working"></i>
+<button type="button" ng-click="" class="b-tarn-a"> 
+	关注(8)
+</button>
+</div>
+   <div class="bar bar-footer pro-header-bar">
+      <div class="title">预热中</div>
+    </div>
+ </div>	
+
+ <div class="pro-content">
+ 	 <ul  class=" box my-tab  " ng-show="mtTabShow"  >
+          <li  ng-click="showItem(1)"  ng-class="{true: 'active', false: 'inactive'}[intisActive]">
+            <p class="p3">项目介绍</p>
+          </li>
+          <li  ng-click="showItem(2)" ng-class="{true: 'active', false: 'inactive'}[ruleisActive]">
+            <p class="p3">项目规则说明</p>
+          </li>
+          <li  ng-click="showItem(3)" ng-class="{true: 'active', false: 'inactive'}[false]">
+            <p class="p3">缴款入围进展</p>
+          </li>
+          <li  ng-click="showItem(4)" ng-class="{true: 'active', false: 'inactive'}[false]">
+            <p class="p3">投后进度</p>
+          </li>
+        </ul>
+        <div ng-show="showIntro" class="pro-intro"> 
+        <ul class="bj "><li><i class="ion-pin"></i>已正式发布</li>
+          <li><i class="ion-pie-graph"></i>尚未产生收入</li>
+          <li><i class="ion-pinpoint"></i>媒体</li>
+          <li><i class="ion-location"></i>上海市</li>
+          <li><i class="ion-person-stalker"></i>平等合投资</li>
+          <li><i class="ion-arrow-graph-up-right"></i>项目收益权</li>
+          </ul>  
+
+          <div class="pro-int-content"> 
+          <h3>项目简介</h3> 
+          <p>918壹号为挂钩银行理财的债权转让型理财产品，其基础资产是银行内部风险评级为低风险（谨慎型）或较低风险（稳健型）的开放式银行现金管理类理财产品。本产品基础资产为银行内部风险评级为低风险（谨慎型）或较低风险（稳健型）的开放式银行现金管理类理财产品。其投资范围一般为银行间和交易所市场信用级别较高、流动性较好的金融资产和金融工具，包括但不限于现金、存款、回购类资产、国债、金融债、央行票据和公司债券等。徕乾商业保理(上海)有限公司是国有大型支付公司的下属金融服务公司，依托母公司强大的支付平台，为服务的优质企业提供贸易融资、进出口保理、国内及离岸保理、应收账款的收付结算、客户资信调查评估等服务</p> 
+          </div> 
+          <div class="pro-int-content"> 
+          <h3>团队介绍</h3> 
+          <p></p> 
+          </div>
+        </div> 
+        <div ng-show="showRule" class="pro-rule">
+        <div class="pro-int-content"> 
+        <h4 style="text-align:center;">投资比例计算方法：项目类型自定义</h4>
+        <ul class="bj "><li>目标筹资额</li><li><span>$2,000,000</span></li>
+          <li>目标出让收益份额</li><li><span>44%</span></li>
+          <li>最高筹资额</li><li><span>$3,000,000</span></li>
+          <li>超募股权折算方案</li><li><span>融资方资金不变，筹资超过目标筹资额。项目总投资额增加。融资方占股比例减少</span></li>
+
+          </ul>
+          </div> 
+        </div> 
+ </div>
+
+
+ 
+ </ion-content>
+  <div class="bar bar-footer ">
+      <button class="button button-balanced " style="margin:0 auto;">$2w起购</button>
+    </div>
+</ion-view>

@@ -1,0 +1,21 @@
+<ion-view view-title="提问" ng-controller="QuestionTabCtrl" hide-tabs="true" class="add-question">
+ <ion-nav-buttons side="right">
+     <button class="button " ng-controller="NavBarCtrl2" ng-click="$parent.FB()" ng-disabled='$parent.btndis'>
+     发布
+        </button>
+    </ion-nav-buttons>
+ <ion-content class="">
+ <div class="">
+            <span ng-repeat="tag in tags " class="tag-style" style="margin:4px 6px">{{tag}} </span> 
+  </div>  
+ 	<ul class="list">
+
+  <li  class="item item-checkbox" ng-repeat="tab in tabs" >
+  <label class="checkbox" ng-click="select(tab.id)">
+             <input type="checkbox" ng-module="tab.sel">
+           </label>
+          <i class="{{tab.img}}"></i>
+         {{tab.name}}</li>        
+        </ul>
+ </ion-content>
+</ion-view>

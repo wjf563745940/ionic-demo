@@ -1,0 +1,67 @@
+<ion-view view-title="首页" ng-controller="IndexCtrl">
+<ion-nav-buttons side="right">
+     <button class="button button-icon ion-plus" ng-click="addQuestion()">
+        </button>
+    </ion-nav-buttons>
+  <ion-content class="">
+ <ion-slide-box active-slide="myActiveSlide" >
+  <ion-slide ng-repeat='lb in lbs track by lb.id'>
+    <div class="box "><img ng-src="{{lb.ur}}" alt=""></div>
+  </ion-slide>
+</ion-slide-box> 
+<div class="hot Aitem">
+  <a href="" alt="11">热门咨询<i class="icon ion-star"></i></a>
+  <ion-list 
+          show-delete="shouldShowDelete"
+          show-reorder="shouldShowReorder"
+          can-swipe="listCanSwipe">
+  <ion-item ng-repeat="item in news track by item.id"
+            class="item-thumbnail-left">
+
+    <img ng-src="{{item.img}}">
+    <h2>{{item.title}}</h2>
+    <p>{{item.content}}</p>
+    <ion-option-button class="button-positive"
+                       ng-click="share(item)">  
+      分享
+    </ion-option-button>
+    <ion-option-button class="button-info"
+                       ng-click="edit(item)">
+      编辑
+    </ion-option-button>
+    <ion-delete-button class="ion-minus-circled"
+                       ng-click="items.splice($index, 1)">
+    </ion-delete-button>
+    <ion-reorder-button class="ion-navicon"
+                        on-reorder="reorderItem(item, $fromIndex, $toIndex)">
+    </ion-reorder-button>
+
+  </ion-item>
+</ion-list>
+</div>
+<div class="pro Aitem">
+   <a href="" alt="11">当红人气项目<i class="icon ion-star"></i></a>
+   <div class="list">
+
+        <a class="item item-thumbnail-left" ng-href="#/tab/proDetial?id=sda" ui-sref="tab.indexHotProDetial({ida:item.id})" ng-repeat="item in pros track by item.id">
+          <img src="http://www.runoob.com/try/demo_source/blue-album.jpg">
+          <h2>{{item.title}}</h2>
+          <p>{{item.content}}</p>
+        </a>
+    </div>    
+</div>
+<div class="active Aitem">
+  <a href="" alt="11">热门活动<i class="icon ion-star"></i></a>
+
+    <ion-scroll zooming="true" direction="xy" style="width: 100%; height: 240px">
+        <ul class="act">
+          <li  ng-repeat="item in acts track by item.id">
+              <img ng-src="{{item.img}}">
+            <p>{{item.title}}</p>
+          </li>
+        </ul>
+      </ion-scroll>
+</div>
+
+  </ion-content>
+</ion-view>

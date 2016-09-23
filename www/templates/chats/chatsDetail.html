@@ -1,0 +1,37 @@
+
+<ion-view view-title="{{chat.name}}" hide-tabs="true" ng-controller="ChatDetailCtrl" class="chats">
+  <ion-content class="padding has-footer ">
+  <div class="list chat">
+  	<!-- <div class="item item-thumbnail-left " ng-repeat="item in list">	
+  	<img ng-src="{{item.user.header}}" class="por" style="width: 44px; height: 44px">
+    <div class="chatborder ">{{item.content}}<p>
+      {{item.time}}
+    </p></div>	
+    </div> -->
+    <div class="item boxitem " ng-repeat="item in list">  
+      <div class="box" ng-hide="item.myself">
+        <img ng-src="{{item.user.header}}" class="por" style="width: 44px; height: 44px">
+        <div class="chatborder "><p>{{item.content}}</p><p>
+      {{item.time}}
+     </p></div>  
+     </div>
+     <div class="box flex-end" ng-show="item.myself">
+        
+      <div class="chatborder  chatborder-right "><p>{{item.content}}</p><p>
+      {{item.time}}
+     </p></div>  
+     <img ng-src="{{item.user.header}}" class="por" style="width: 44px; height: 44px">
+     </div>
+      </div>
+  </div>	
+
+  </ion-content>
+   <div class="bar bar-footer box">
+  <button class="button button-icon ion-happy-outline" ng-click="addQuestion()">
+        </button>
+  <div class="" style="flex-grow: 1;" contenteditable="true" ng-model="inputChat"><input type="text" class="chat-input" ng-model="inputChat" />
+
+  </div>
+  <button class="button" ng-click="addChat()">发送</button>
+</div>
+</ion-view>

@@ -1,0 +1,22 @@
+<ion-view view-title="提问" ng-controller="AddQuestion" class="add-question">
+ <ion-nav-buttons side="right">
+     <button class="button "  ng-controller="NavBarCtrl2" ng-click="addQuestion()">
+     下一步
+        </button>
+    </ion-nav-buttons>
+ <ion-content class="" >
+ <div class="box box-column">
+ <label class="item item-input">
+        </label>
+    <label class="item item-input">
+          <input type="text" placeholder="请填写下你的问题的标题" ng-model="$parent.mytitle" ng-pattern="/^.*\?$/" required>
+        </label>
+  <label class="item item-input tex" >
+    <textarea  placeholder="请填写问题的信息" style="resize:none;" ng-model="$parent.mycontent"></textarea>
+
+    <button class="button button-icon ion-android-image tex-btn" ng-click="addPhoto()">
+        </button>
+  </label> 
+  </div>    
+ </ion-content>
+</ion-view>

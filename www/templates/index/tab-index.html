@@ -1,0 +1,82 @@
+<ion-view view-title="首页" ng-controller="IndexCtrl">
+ <ion-nav-buttons side="right">
+     <button class="button button-icon ion-plus" ng-controller="NavBarCtrl2" ng-click="showSheet()">
+        </button>
+    </ion-nav-buttons>
+  <ion-content class="">
+ <ion-slide-box active-slide="myActiveSlide" >
+  <ion-slide ng-repeat='lb in lbs track by lb.id'>
+    <div class="box "><img ng-src="{{lb.ur}}" alt=""></div>
+  </ion-slide>
+</ion-slide-box> 
+<div class="hot Aitem">
+  <a href="" alt="11">热门咨询<i class="icon ion-star"></i></a>
+  <ion-list 
+          show-delete="shouldShowDelete"
+          show-reorder="shouldShowReorder"
+          can-swipe="listCanSwipe">
+  <ion-item ng-repeat="item in news track by item.id"
+            class="item-thumbnail-left">
+                 
+    <img ng-src="{{item.img}}">  <a class="a-noder" ui-sref="tab.HotNewDetial({ida:item.id})"> 
+    <p class="p1">{{item.content}}</p>
+    <p class="p2"><span>{{item.tag}}</span><span class="float-r"><i class="ion-chatbubble-working"></i>&nbsp;{{item.chatNum}}&nbsp;|&nbsp;<i class="ion-thumbsup"></i>&nbsp;{{item.thumbsup}}</span></p>
+    </a><ion-option-button class="button-positive"
+                       ng-click="share(item)">  
+      分享
+    </ion-option-button>
+    <ion-option-button class="button-info"
+                       ng-click="edit(item)">
+      编辑
+    </ion-option-button>
+    <ion-delete-button class="ion-minus-circled"
+                       ng-click="items.splice($index, 1)">
+    </ion-delete-button>
+    <ion-reorder-button class="ion-navicon"
+                        on-reorder="reorderItem(item, $fromIndex, $toIndex)">
+    </ion-reorder-button>
+
+  </ion-item>
+</ion-list>
+</div>
+<div class="pro Aitem">
+   <a href="" alt="11">当红人气项目<i class="icon ion-star"></i></a>
+   <div class="list">
+
+        <a class="item item-thumbnail-left" ng-href="#/tab/proDetial?id=sda" ui-sref="tab.indexHotProDetial({ida:item.id})" ng-repeat="item in pros track by item.id">
+          <img src="http://www.runoob.com/try/demo_source/blue-album.jpg">
+          <p class="p1"><span class="{{item.cState}} c-state0">{{item.state}}</span>{{item.content}}</p>
+          <div ng-show="item.state === '预热中'"><div class="box box-state1 box-tag">
+            <div><div> ${{item.targetFinancing}}</div><div>目标筹资</div></div>
+            <div class="t-align-r"><div>{{item.pageViews}}</div><div>浏览数</div></div></div>
+          </div>
+          <div ng-show="item.state === '认购中'"><div class="box box-state1 box-tag">
+            <div><div> ${{item.alreadyFinancing}}</div><div>已筹资</div></div>
+            <div><div> ${{item.targetFinancing}}</div><div>目标筹资</div></div>
+            <div class="t-align-r"><div>150天</div><div>剩余</div></div></div>
+            <div class='my-progress pro10'></div> 
+            </div>
+          <div ng-show="item.state === '筹资成功'"><div class="box box-state1 box-tag">
+            <div><div> ${{item.alreadyFinancing}}</div><div>已筹资</div></div>
+            <div><div> {{item.financingNumber}}人</div><div>已认购</div></div>
+            <div class="t-align-r"><div>{{item.successDay}}</div><div>筹资成功</div></div></div>
+            <div class='my-progress pro100'></div> 
+            </div>
+        </a>
+    </div>    
+</div>
+<div class="active Aitem">
+  <a href="" alt="11">热门活动<i class="icon ion-star"></i></a>
+
+    <ion-scroll zooming="true" direction="x" style="width: 100%; " >
+        <ul class="act">
+          <li  ng-repeat="item in acts track by item.id">
+              <img ng-src="{{item.img}}">
+            <p class="p3">{{item.title}}</p>
+          </li>
+        </ul>
+      </ion-scroll>
+</div>
+  <div class="mar-top-20"><img ng-src="{{logo}}" /></div>
+  </ion-content> 
+</ion-view>

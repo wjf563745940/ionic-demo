@@ -1,0 +1,31 @@
+<ion-view view-title="共{{Issue.follow}}条回答" ng-controller="CommunityDetialCtrl" hide-tabs="true">
+ <ion-nav-buttons side="left">
+     <button class="button button-icon ion-arrow-left-c" ng-controller="NavBarCtrl2" ng-click="goBack()">
+        </button>
+    </ion-nav-buttons>
+  <ion-content class="padding">
+  <div class="item3">
+  <img class="headr1" src="{{questioner.header}}">	<div class="item2">
+          		<p class="green2 m-bom-6">{{questioner.name}}</p>
+          		<p class="gray">{{questioner.sign}}</p>
+          	</div></div>
+          	<div class="item3 p-tb-10">
+          	<span ng-repeat="tag in tags" class="tag-style">{{tag}} </span>	
+          	</div>
+          <div class="item3 p-tb-10">
+          <h3>{{Issue.title}}</h3>
+          <p>{{Issue.conten}}</p>
+          <div style="text-align:right">{{Issue.follow}}个关注&nbsp;<button ng-disabled="disabled" type="" ng-click="gofollow()" class="mybtn {{btnColor}}">{{textContent}}</button></div>		
+          	</div> 
+
+          	   <div class="list">
+
+        <a class="item " ng-href="#/tab/proDetial?id=sda" ui-sref="tab.indexHotProDetial({ida:item.id})"
+         ng-repeat="item in contents track by item.id">
+          <img class="headr1" src="{{item.user.header}}">
+          <p class="green2">{{item.user.name}} &nbsp;<span class="gray">{{ite.user.sign}}</span></p>
+          <p class="p3">{{item.content}}</p>    
+        </a>
+    </div>  	
+  </ion-content>
+</ion-view>

@@ -1,0 +1,33 @@
+<ion-view view-title="社区" ng-controller='CommunityCtrl'>
+ <ion-nav-buttons side="right">
+     <button class="button button-icon ion-plus" ng-controller="NavBarCtrl2" ng-click="showSheet()">
+        </button>
+    </ion-nav-buttons>
+<ion-scroll zooming="true" direction="xy" style="width: 100%;" class="mar-top-44">
+        <ul id="my-community" class="my-community box" ng-class="my-c">
+           <!--  <li><a href="#/test" ui-sref="test" nav-direction="forward">test</a></li>  -->
+          <li  ng-repeat="item in myCommunity track by item.id" class="{{item.active}}" ng-click="go(item.id)">
+            <p class="p3">{{item.name}}</p>
+          </li>
+        </ul>
+      </ion-scroll>
+ <ion-content class="mar-top-44">
+      <div class="list">
+        <a class="item " ui-sref="communityDetial({cmmId:item.id})" on-tap='myHref(item.id)'
+        collection-repeat="item in pros track by item.id" nav-direction="forward">
+          <h2>{{item.title}}</h2>
+          <div class="box betwen-buttom mar-top-10">
+          	<div><img  ng-src="{{item.user.header}}" class="headr1" />	<div class="item2">
+          		<p>{{item.user.name}}</p>
+          		<p class="gray">{{item.time}}</p>
+          		
+          	</div></div>
+          	<div>回答 &nbsp;{{item.contentNum}}</div>
+          </div>
+          		      
+
+        </a>
+    </div> 
+</ion-content>
+</ion-view>
+
